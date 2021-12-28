@@ -136,14 +136,14 @@ In order to run the algorithms on a particular graph with our GUI:
 
 
 ## Visualization
-json1 with tsp function of some nodes:
-![This is an image](https://github.com/YosiElias/Ex2-OOP/blob/master/Ex2/src/resources/TSPgraph.jpeg)
+center:
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/center.PNG)
 
 json2 with shortest path between 2 nodes
-![This is an image](https://github.com/YosiElias/Ex2-OOP/blob/master/Ex2/src/resources/GraphShort.jpeg)
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/about.PNG)
 
 json2 after removing 3 nodes
-![This is an image](https://github.com/YosiElias/Ex2-OOP/blob/master/Ex2/src/resources/Graph2.jpeg)
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/tsp path.PNG)
 
 
 
