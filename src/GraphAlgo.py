@@ -1,12 +1,12 @@
 import json
 import queue
 
-# from sqlalchemy import null
-from heapq import heappush, heappop  # Todo: !
+
+from heapq import heappush, heappop
 from itertools import count
 from queue import PriorityQueue
 
-# from pygame_menu.widgets.widget import button
+
 
 from src.Egde import Edge
 from src.DiGraph import DiGraph
@@ -27,7 +27,7 @@ class GraphAlgo(GraphAlgoInterface):
 
     def __init__(self, g:DiGraph=None):
         # self._graph = self.load_from_json(path)
-        self._graph = g # Todo: change from None
+        self._graph = g
         self.INF = float('inf')
 
     def get_graph(self):
@@ -90,18 +90,14 @@ class GraphAlgo(GraphAlgoInterface):
         n_list = self._graph.getN()
         GraphAlgo.reset(self, n_list)
         curr.set_info(0)
-        push = heappush # Todo: !
+        push = heappush
         pop = heappop
         c = count()
         heap = []
         push(heap, (0, next(c), curr))
-        # pq = PriorityQueue()
-        # pq.put((0,curr))
         curr.set_visit(True)
 
-        # while not pq.empty():
         while heap:
-            # (dist, cur_n) = pq.get()
             (dist, _, cur_n) = pop(heap)
             cur_key = cur_n.get_id()
             dic = DiGraph.getNeighboursDict(self._graph, cur_n.get_id())
@@ -110,15 +106,11 @@ class GraphAlgo(GraphAlgoInterface):
                 i = neighbour
                 node = self._graph.getNode(i)
                 if Node is not None and node.get_visit() is False:
-                # if Node is not None:
                     edge = self._graph.getEdge(str(cur_key), str(node.get_id()))
                     new_tag = edge.get_weight() + cur_n.get_info()
                     if (new_tag < self.INF and node.get_info() == self.INF) or node.get_info() > new_tag:
                         node.set_tag(cur_key)
                         node.set_info(new_tag)
-                        # if node.get_visit() is False:
-                        # pq.put((new_tag, node))
-                        # node.set_visit(True)
                         push(heap, (new_tag, next(c), node))
 
         if dest.get_info() is self.INF:
@@ -146,7 +138,7 @@ class GraphAlgo(GraphAlgoInterface):
         list = []
         for i in range(counter):
             temp_n = stack.pop()
-            list.append(temp_n)    #Todo: yossi change from: 'list.append(temp_n)'
+            list.append(temp_n)
         return list
 
 
@@ -191,7 +183,7 @@ class GraphAlgo(GraphAlgoInterface):
                     cost = dest.get_info()
                     if (cost < minCost):
                         minPath = self.shortest_path(src_id, dest.get_id())[
-                            1]  # Todo: check that the second play of 'shortest_path' is not arm the 'info' of dist of all nodes
+                            1]
                         del minPath[0]
                         minCost = cost
                         tempPath = minPath
@@ -260,28 +252,36 @@ class GraphAlgo(GraphAlgoInterface):
         :return: None
         """
         main(alg=self)
-        # for node in self._graph.getN().values():
-        #     # plot Nodes:
-        #     node: Node
-        #     loc = node.get_location()
-        #     if loc == None:
-        #         node.set_location_random()  # placed in a uniform random
-        #         x, y = node.get_location()
-        #     else:
-        #         x, y = loc[0], loc[1]
-        #     plt.plot(x, y, markersize=4, marker='o', color='deepskyblue')
-        #     plt.text(x, y, str(node.get_id()), color="navy", fontsize=9)
-        #     for neibr_id, w in self._graph.getNeighboursDict(node.get_id()).items():
-        #         # plot Edges:
-        #         neibr = self._graph.getNode(neibr_id)
-        #         loc_neibr = neibr.get_location()
-        #         if loc_neibr == None:
-        #             neibr.set_location_random()  # placed in a uniform random
-        #             x_, y_ = neibr.get_location()
-        #         else:
-        #             x_, y_ = loc_neibr[0], loc_neibr[1]
-        #         plt.annotate("", xy=(x, y), xytext=(x_, y_), arrowprops=dict(arrowstyle="<-"), color="tomato", )
-        # plt.show()
+
+    def plot_graph_2(self) -> None:
+        """
+        Simple Plots the graph.
+        If the nodes have a position, the nodes will be placed there.
+        Otherwise, they will be placed in a random but elegant manner.
+        :return: None
+        """
+        for node in self._graph.getN().values():
+            # plot Nodes:
+            node: Node
+            loc = node.get_location()
+            if loc == None:
+                node.set_location_random()  # placed in a uniform random
+                x, y = node.get_location()
+            else:
+                x, y = loc[0], loc[1]
+            plt.plot(x, y, markersize=4, marker='o', color='deepskyblue')
+            plt.text(x, y, str(node.get_id()), color="navy", fontsize=9)
+            for neibr_id, w in self._graph.getNeighboursDict(node.get_id()).items():
+                # plot Edges:
+                neibr = self._graph.getNode(neibr_id)
+                loc_neibr = neibr.get_location()
+                if loc_neibr == None:
+                    neibr.set_location_random()  # placed in a uniform random
+                    x_, y_ = neibr.get_location()
+                else:
+                    x_, y_ = loc_neibr[0], loc_neibr[1]
+                plt.annotate("", xy=(x, y), xytext=(x_, y_), arrowprops=dict(arrowstyle="<-"), color="tomato", )
+        plt.show()
 
     def __str__(self):
         return self._graph
@@ -296,8 +296,6 @@ def is_load(file_name: str):
 
     Node_list = data['Nodes']
     for node in Node_list:
-        # n = Node(id=node['id'], pos=node['pos'])
-        # i = n.get_id()
         try:
             pos = node['pos'].split(",")
             _g.add_node(node_id=node['id'],pos= pos)
@@ -360,9 +358,6 @@ __all__ = ['main']
 import pygame
 import pygame_menu
 from pygame_menu.examples import create_example_window
-# import GraphAlgo
-# from src.DiGraph import DiGraph
-# from src.Node import Node
 import math
 import tkinter as tk
 from tkinter import filedialog
@@ -452,7 +447,6 @@ def short_path()->None:
         # my_w.destroy()
         arr = [int(s) for s in my_str1.split() if s.isdigit()]
         src, dest = arr[0], arr[1]
-        # src, dest = my_str1.split(",")
         print(src,", ",dest)
         d, path = algo.shortest_path((src), (dest))
         func_resulte["short_path"] = path
@@ -498,7 +492,6 @@ def tsp()->None:
             my_str1 = t1.get("1.0", END)  # read from one text box t1
             print(my_str1)
             arr = [int(s) for s in my_str1.split() if s.isdigit()]
-            # src, dest = my_str1.split(",")
             path, d = algo.TSP(arr)
             for i in range(len(path) - 1):
                 src_id = (path[i])
@@ -747,21 +740,6 @@ def main(test: bool = False, alg:GraphAlgo=None) -> None:
     # Add widgets
     file_menu.add.button('Load New Graph', Load_graph)
     file_menu.add.button('Save Graph', save_graph)
-
-    # Adds a selector (element that can handle functions)
-    # file_menu.add.selector(
-    #     title='Change color ',
-    #     items=[('Random', (-1, -1, -1)),  # Values of selector, call to change_color_bg
-    #            ('Default', (128, 0, 128)),
-    #            ('Black', (0, 0, 0)),
-    #            ('Blue', (12, 12, 200))],
-    #     default=1,  # Optional parameter that sets default item of selector
-    #     onchange=change_color_bg,  # Action when changing element with left/right
-    #     onreturn=change_color_bg,  # Action when pressing return on an element
-    #     # All the following kwargs are passed to change_color_bg function
-    #     write_on_console=True
-    # )
-    # file_menu.add.button('Update game object', TestCallClassMethod().update_game_settings)
     file_menu.add.button('Return to Menu', pygame_menu.events.BACK)
     file_menu.add.button('Close Menu', pygame_menu.events.CLOSE)
 
@@ -812,7 +790,6 @@ def main(test: bool = False, alg:GraphAlgo=None) -> None:
     about_menu = pygame_menu.Menu(
         center_content=False,
         height=400,
-        # mouse_visible=False,
         theme=about_theme,
         title='About',
         width=600
@@ -823,7 +800,6 @@ def main(test: bool = False, alg:GraphAlgo=None) -> None:
        "We hope the use of this \ninterface is as intuitive and convenient \nas we tried to create it."
 
     about_menu.add.label(m, margin=(0, 0))
-    # about_menu.add.label('')
     about_menu.add.button('Return to Menu', pygame_menu.events.BACK)
 
     # -------------------------------------------------------------------------
@@ -994,31 +970,6 @@ def arrow(start, end, d, h, color):
     # pygame.draw.line(surface, color, start, end, width=3)
     pygame.draw.polygon(surface, color, points)
 
-# def display():
-#     # button.func=algo.my_algo
-#     min_max(algo.graph)
-#     # run=True
-#     src=-1
-#     while run:
-#         for event in pygame.event.get():
-#             if event.type==pygame.QUIT:
-#                 run=False
-#             if event.type\
-#                     ==pygame.MOUSEBUTTONDOWN:
-#                 if button.rect.collidepoint(event.get_location()):
-#                     button.press()
-#                     if button.is_pressed:
-#                         on_click(button.func)
-#                     else:
-#                         result.clear()
-#                 for n in node_screens:
-#                     if n.rect.collidepoint(event.get_location()):
-#                         src=n.get_id()
-#
-#         surface.fill((250,250,250))
-#         draw(algo,src)
-#         pygame.display.update()
-
 
 def plot_result(java_p, python_p, title, x_title)->None:
     data = ['Small-Graph', '1,000-Nodes', '10,000-Nodes', '100,000 Nodes', '1,000,000 Nodes']
@@ -1052,13 +1003,14 @@ def plot_result(java_p, python_p, title, x_title)->None:
     plt.show()
 
 if __name__ == '__main__':
+    main()
     # plot the resule:
     center_j = [0.111, 11.62, 2280, 0, 0]
     short_j = [0.112, 0.309, 1.146, 0, 0]
     tsp_j = [0.249, 1.205, 9.453, 0, 0]
     tsp_j_W = [14.2329, 4316.4518, 4811.0436, 0, 0]
 
-    center_p = [1000, 100, 100, 1000, 1000] # Todo: update best result, tsp path for all: {1,3,5,7,9,0}
+    center_p = [1000, 100, 100, 1000, 1000] #update best result, tsp path for all: {1,3,5,7,9,0}
     short_p = [1000, 100, 100, 1000, 1000]
     tsp_p = [1000, 100, 100, 1000, 1000]
     tsp_p_W = [1000, 100, 100, 1000, 1000]

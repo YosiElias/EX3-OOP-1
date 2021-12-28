@@ -79,9 +79,4 @@ class Node:
         (x, y) = random.uniform(0, 100), random.uniform(0, 100)
         self._location = (x, y)
 
-    # def get_location(self) -> tuple:
-    #     return self._location
-    #
-    # def set_location_random(self):
-    #     (x, y) =random.uniform(0,100),random.uniform(0,100)
-    #     self._location = (x, y)
+

@@ -14,12 +14,6 @@ class DiGraph(GraphInterface):
         self.MC = 0
 
     def __repr__(self):
-        # ans = 'Nodes: '
-        # for n in self._Nodes.values():
-        #     ans = ans + str(n)+', '
-        # ans = ans + '\nEdges: '
-        # for e in self._Edges.values():
-        #     ans = ans + str(e)+', '
         return '|V|={}, |E|={}'.format(len(self._Nodes), self.num_of_edges)
 
 

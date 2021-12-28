@@ -95,7 +95,7 @@ class TestGraph(TestCase):
 
     def test_short_path_1000(self):
         graph = GraphAlgo()
-        file = "../data/1000Nodes.json"
+        file = r"C:\Users\97254\PycharmProjects\Ex3\data\1000Nodes.json"
         graph.load_from_json(file)
         j,e = GraphAlgo.shortest_path(graph, 260,13)
         self.assertEqual([260, 826, 927, 889, 566, 13], e)
@@ -110,7 +110,7 @@ class TestGraph(TestCase):
 
     def test_short_path_100k(self):
         graph = GraphAlgo()
-        file = "../data/100000.json"
+        file = r"C:\Users\97254\PycharmProjects\Ex3\data\100000.json"
         graph.load_from_json(file)
         j,e = GraphAlgo.shortest_path(graph, 1,22090)
         self.assertEqual(814.3408619971573,j)
@@ -123,6 +123,14 @@ class TestGraph(TestCase):
         graph.plot_graph()
         # j,e = GraphAlgo.shortest_path(graph,987,8324)
         # self.assertEqual([987, 8119, 8704, 8122, 5607, 195, 4555, 7055, 9178, 8324], e)
+
+    def test_tsp(self):
+        graph = GraphAlgo()
+        file = r"C:\Users\97254\PycharmProjects\Ex3\data\100000.json"
+        graph.load_from_json(file)
+        ans = graph.TSP([1, 3, 5, 7, 9, 0])
+        # self.assertEqual(ans[1],1.8884659521433524)
+        self.assertEqual(ans[1], [1, 0])
 
 
 def graph_creator(num_of_nodes: int, num_of_ed: int):
