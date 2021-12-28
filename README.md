@@ -115,8 +115,8 @@ This class implements GraphAlgo interface. The only field in the class is a weig
 
 ## GUI
 In order to run the algorithms on a particular graph with our GUI:
-   1.	Run the function ' plot_graph' from 'GraphAlgo'
-   •	The graph will now be displayed in a new window where you can perform all the steps below.
+   1.	Run the function ' plot_graph' from 'GraphAlgo':
+       * The graph will now be displayed in a new window where you can perform all the steps below.
 2.	You can now execute all the algorithms by click 'esc' and then selecting the menu 'Function'   ->  'algorithm function name' (e.g.  'center'). 
 •	Now for each function that requires input, a new input window will be displayed depending on the selected function.
 •	When you have finished entering the input (according to the instructions in the window), press 'Play' and the input window will close automatically
