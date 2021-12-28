@@ -1,6 +1,8 @@
 # Oop_Ex3
-![This is an image](https://github.com/YosiElias/Ex2-OOP/blob/master/Ex2/src/resources/Graph.jpeg)
-This project is the fourth task in the course. The task implements a data structure of weighted and directional gragh but this time in **PYTHON**. The project implements a number of algorithms on the graph including calculate a short path between two vertices in the graph, the ability to implement graphical interface presenting the graph, and load json files to be a graph and more. 
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/welcome.jpeg)
+This project is the fourth task in the course. The task implements a data structure of weighted and directional gragh but this time in **PYTHON**. The project implements a number of algorithms on the graph including calculate a short path between two vertices in the graph, the ability to implement graphical interface presenting the graph, and load json files to be a graph and more.
+
+(**the picture above is the window that opens when runnung the gui**)
 
 
 ## Table of contents
@@ -134,14 +136,17 @@ In order to run the algorithms on a particular graph with our GUI:
 
 
 ## Visualization
-json1 with tsp function of some nodes:
-![This is an image](https://github.com/YosiElias/Ex2-OOP/blob/master/Ex2/src/resources/TSPgraph.jpeg)
+menu
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/menu.PNG)
 
-json2 with shortest path between 2 nodes
-![This is an image](https://github.com/YosiElias/Ex2-OOP/blob/master/Ex2/src/resources/GraphShort.jpeg)
+about
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/about.PNG)
 
-json2 after removing 3 nodes
-![This is an image](https://github.com/YosiElias/Ex2-OOP/blob/master/Ex2/src/resources/Graph2.jpeg)
+tsp
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/tsp%20path.PNG)
+
+center:
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/center.PNG)
 
 
 
