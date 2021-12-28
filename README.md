@@ -136,14 +136,17 @@ In order to run the algorithms on a particular graph with our GUI:
 
 
 ## Visualization
-center:
-![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/center.PNG)
+menu
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/menu.PNG)
 
-json2 with shortest path between 2 nodes
+about
 ![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/about.PNG)
 
-json2 after removing 3 nodes
-![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/tsp path.PNG)
+tsp
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/tsp%20path.PNG)
+
+center:
+![This is an image](https://github.com/roee-tal/EX3-OOP/blob/main/data%20for%20git/center.PNG)
 
 
 
