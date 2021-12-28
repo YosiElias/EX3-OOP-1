@@ -8,7 +8,7 @@ This project is the fourth task in the course. The task implements a data struct
 * [Graph Class](#Graph-Class)
 * [GraphAlgo class](#GraphAlgo-class)
 * [Implementations and principles](#Implementations-and-principles)
-* [GUI](#GUI)
+* [GUI-Explanation and how to run](#GUI-Explanation-and-how-to-run)
 * [Performances](#Performances)
 * [Visualization](#Visualization)
 * [External info](#External-info)
@@ -113,29 +113,25 @@ This class implements GraphAlgo interface. The only field in the class is a weig
      * If the check for some method has failed - most of the time we make intensive examination on the small graph we created because it is easier to follow, and then changed the implementation until the method passed for all jsons.
 
 
-## GUI
-In order to run the algorithms on a particular graph:
-1.  Run the command line - java -jar Ex2.jar 'File location'/'file name'.json
-        The graph will now be displayed in a new window where you can perform all the steps         below.
-2.  You can now execute all the algorithms by selecting the menu 'Function' (or click           ALT+a)     ->  'algorithm function name' (e.g.  'isConnected'). 
-        * Now for each function that requires input, a new input window will be displayed              depending on the selected function.
-        * Note: A valid input must be entered (for example, do not enter an id Node that               does not exist in the graph on 'shortPath' function).
-          If you do so, a corresponding error message will be received in a new window.
-        * Note: In the 'TSP' function after entering all the data, enter 'Z' / 'z' to close           the input window (as explained in the window itself).
-3.   You can edit the graph you loaded by selecting the menu 'Edit' (or click ALT+e)  ->          'Edit funftion' (e.g.  'Add Node').
-        * Note: A valid input must be entered (for example, do not enter an id Node that               does not exist in the graph on 'Remove Node' function).
-4.   In addition, you can perform general operations on the graph, such as loading a new          graph, clearing the board from the existing graph, saving the graph in a JSON file,          and exiting the program.
-        * These operations are performed by selecting the menu 'File' (or click ALT+f) ->              'file function name' (e.g.  'Load Graph').
-        * Note: If you load a new graph, the current graph will be automatically deleted               from the board and the new graph will be displayed in its place.
-        * To load a new graph you can also press ALT+F+L.
-        * To close the program, you can also click ALT+F4.
+## GUI-Explanation and how to run
+In order to run the algorithms on a particular graph with our GUI:
+   1.	Run the function ' plot_graph' from 'GraphAlgo'.
+          * The graph will now be displayed in a new window where you can perform all the steps below.
+   2.	You can now execute all the algorithms by click 'esc' and then selecting the menu 'Function'   ->  'algorithm function name' (e.g.  'center'). 
+          * Now for each function that requires input, a new input window will be displayed depending on the selected function.
+          * When you have finished entering the input (according to the instructions in the window), press 'Play' and the input window will close automatically
+          * **Note**: A valid input must be entered (for example, do not enter an id Node that does not exist in the graph on 'shortPath' function).
+   If you do so, a corresponding error message will be received in a new window.
+          *	**Note**: In the 'TSP' and 'shortPath'  functions the data must be entered with a 'space' (as explained in the window itself).
+   3.	You can edit the graph you loaded by click 'esc' and then selecting the menu 'Edit'  ->  'Edit funftion' (e.g.  'Add Node').
+   	      * **Note**: A valid input must be entered (for example, do not enter an id Node that does not exist in the graph on 'Remove Node' function).
+                      If you do so, a corresponding error message will be received in a new window.
+   4.	In addition, you can perform general operations on the graph, such as loading a new graph, saving the graph in a JSON file, and exiting the program (by click 'esc' and           then selecting the menu 'File').
+         *	**Note**: If you load a new graph, the current graph will be automatically deleted from the board and the new graph will be displayed in its place.
+         * **Note**: Because we made a GUI, when function 'plot_graph' is enabled the program will continue to run the GUI but will not continue to run the file from which it                      was called.
+         * We were instructed to leave it that way, but write a note so that the assignment checker knows it.
+         * In addition, we created a simpler plot in order to appropriate the assignment in the best way, which can be run by the 'plot_graph_small' function. 
 
-
-
-## Performances
-
-
-> NOTE: the graphs of 100000 and 1000000 wer'e to big so we couldn't upload them to the github.
 
 ## Visualization
 json1 with tsp function of some nodes:
