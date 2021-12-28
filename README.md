@@ -8,7 +8,7 @@ This project is the fourth task in the course. The task implements a data struct
 * [Graph Class](#Graph-Class)
 * [GraphAlgo class](#GraphAlgo-class)
 * [Implementations and principles](#Implementations-and-principles)
-* [GUI](#GUI)
+* [GUI -Explanation and how to run](#GUI-Explanation-and-how-to-run)
 * [Performances](#Performances)
 * [Visualization](#Visualization)
 * [External info](#External-info)
@@ -113,7 +113,7 @@ This class implements GraphAlgo interface. The only field in the class is a weig
      * If the check for some method has failed - most of the time we make intensive examination on the small graph we created because it is easier to follow, and then changed the implementation until the method passed for all jsons.
 
 
-## GUI
+## GUI -Explanation and how to run
 In order to run the algorithms on a particular graph with our GUI:
    1.	Run the function ' plot_graph' from 'GraphAlgo'.
           * The graph will now be displayed in a new window where you can perform all the steps below.
